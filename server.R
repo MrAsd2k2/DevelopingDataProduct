@@ -18,7 +18,8 @@ shinyServer(function(input, output) {
          the <i>age range</i> of the foreign residents and their <i>sex</i>. Instead, the slider will help you selecting the <i>range of years</i> to be analyzed&#40;at the present time the dataset includes information from year 2011 to year 2016&#41;<br/>
          As soon as you are satisfied, switch to one of the other two tabs: <b>Plot</b> will display a graphical representation of the number of foreign residents, the <b>Table</b> tab will shows the same information in a tabular format.<br/>
           <p>The widgets will remain anchored at the bottom of the page so you might change some of the parameters without getting back to this page: the related plot and data table will be updated on the fly according to your choices.<br/>
-        In case you would like to read the documentation again, click on the <b>istruction</b> tab to get back to this page.
+        In case you would like to read the documentation again, click on the <b>istruction</b> tab to get back to this page.<br/>
+      <p><u>The source code of the shiny application is available at: <a href=\"https://github.com/MrAsd2k2/DevelopingDataProduct\">https://github.com/MrAsd2k2/DevelopingDataProduct</a></u>
          ")         })
   
   
