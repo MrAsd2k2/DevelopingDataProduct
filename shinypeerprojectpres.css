@@ -1,0 +1,19 @@
+.normalpage .reveal .state-background {
+  background: white;
+} 
+
+.reveal h3
+{ font-size: 40px;}
+
+
+.normalpage .reveal section del {
+  color: red;
+}
+
+
+.normalpage .reveal ol,
+.normalpage .reveal ul,
+.normalpage .reveal p {
+  color: black;
+font-size: 20px;  
+}

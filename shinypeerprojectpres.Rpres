@@ -1,28 +1,25 @@
 Coursera Developing Data Products - Course Project
 ========================================================
 author: Andrea Bruna
-date: Fbruary 3th, 2017
+date: February 3th, 2017
 autosize: true
 transition: fade
 incremental: false
 
-.exclaim .reveal .state-background {
-  background: black;
-} 
-.exclaim .reveal h1,
-.exclaim .reveal h2,
-.exclaim .reveal p {
-  color: white;
-}
 
 Introduction
 ========================================================
+type: normalpage
 
 This presentation will introduce the ratio behind the 
 tool developed for the Coursera Developing Data Products 
 Course Project.
 
-The application is hosted at the following address:
+The assignment is composed of two parts:
+* a shiny application
+* a presentation
+
+My application is hosted at the following address:
 http://andbruna.shinyapps.io/shinypeerproject
 
 A copy of the data, the full source code for the shiny application
@@ -30,8 +27,10 @@ and the R Presentation are hosted on:
 https://github.com/MrAsd2k2/DevelopingDataProduct
 
 
+
 Foreign residents in Lombardy Region
 ========================================================
+type: normalpage
 
 This app uses open data kindly provided by Lombardy region
 under the terms of the Open Data project. The portal is available
@@ -48,32 +47,43 @@ I developed an application that allows to visualize and plot the data
 with a simpler interface and additional features useful for a data analyst/data scientist
 (or a simple curious...)
 
+```{r, echo=FALSE}
+dataset <- read.csv("Stranieri_per_sesso_e_et_.csv")
+```
 
 DataSet
 ========================================================
+type: normalpage
 
 The dataset provided (snapshotted at the end of January 2017)
-includes X records for the twelve provinces (or metropolitan city)
-of Lumbardy in Italy. The data are split according to
-* sex of the resident
-* age range
-* area district 
-* municipality <small>(not used by the present app)</small>
+includes 175522 records for the twelve provinces (or metropolitan city)
+of Lumbardy in Italy. The features used are: sez of the resident, age range and area district. 
 
-An excerpt of the data set:
-```{r}
-dim(dataset)
-head(dataset,10)
+At the present time the dataset contain the following informations:
+
+```{r, size='tiny'}
+names(dataset)
 ```
 
 Plot comparison 
 ========================================================
+type: normalpage
 
 A standard representation of data (standard R plot):
+
+
 ```{r, echo=FALSE}
-plot(sum(Femmine_in_Totale+Maschi_in_Totale), Anno)
-
+tmp <- aggregate(dataset$Femmine.in.totale+dataset$Maschi.in.totale, by=list(dataset$Anno), FUN="sum") 
+plot(tmp$Group.1, tmp$x)
 ```
-The app output and interface:
-![alt text](myimage.png)
 
+
+
+***
+
+
+The app "reactive" output (parameters could be changed and they immediately apply):
+
+![actual output](plot.png)
+
+~~Much better. Right? :)~~
