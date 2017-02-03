@@ -1,28 +1,79 @@
-shinypeerprojectpres
+Coursera Developing Data Products - Course Project
 ========================================================
-author: 
-date: 
+author: Andrea Bruna
+date: Fbruary 3th, 2017
 autosize: true
+transition: fade
+incremental: false
 
-First Slide
+.exclaim .reveal .state-background {
+  background: black;
+} 
+.exclaim .reveal h1,
+.exclaim .reveal h2,
+.exclaim .reveal p {
+  color: white;
+}
+
+Introduction
 ========================================================
 
-For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
+This presentation will introduce the ratio behind the 
+tool developed for the Coursera Developing Data Products 
+Course Project.
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+The application is hosted at the following address:
+http://andbruna.shinyapps.io/shinypeerproject
 
-Slide With Code
+A copy of the data, the full source code for the shiny application
+and the R Presentation are hosted on:
+https://github.com/MrAsd2k2/DevelopingDataProduct
+
+
+Foreign residents in Lombardy Region
 ========================================================
 
+This app uses open data kindly provided by Lombardy region
+under the terms of the Open Data project. The portal is available
+at the address: 
+https://www.dati.lombardia.it/
+
+The website of the region allows to display this specific data
+(and many more) however informations are available in tabular form only 
+and narrowing down the search or perform exploratory data analysis 
+is relativele difficult and sub-optimal.
+
+As the website provides connectors and allow to download the content,
+I developed an application that allows to visualize and plot the data 
+with a simpler interface and additional features useful for a data analyst/data scientist
+(or a simple curious...)
+
+
+DataSet
+========================================================
+
+The dataset provided (snapshotted at the end of January 2017)
+includes X records for the twelve provinces (or metropolitan city)
+of Lumbardy in Italy. The data are split according to
+* sex of the resident
+* age range
+* area district 
+* municipality <small>(not used by the present app)</small>
+
+An excerpt of the data set:
 ```{r}
-summary(cars)
+dim(dataset)
+head(dataset,10)
 ```
 
-Slide With Plot
+Plot comparison 
 ========================================================
 
+A standard representation of data (standard R plot):
 ```{r, echo=FALSE}
-plot(cars)
+plot(sum(Femmine_in_Totale+Maschi_in_Totale), Anno)
+
 ```
+The app output and interface:
+![alt text](myimage.png)
+
